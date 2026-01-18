@@ -3,13 +3,13 @@
 ## サービス概要
 服装選びに自信がない人向けのサービスです
 コーディネート案を投稿し、他の人にチェックしてもらえるソーシャルプラットフォーム
-投票システムを通じて、特定の場面でその服装が適切かどうかを判断できます
-また、このアプリで自分の服をカタログ化できるようにしたいと考えています (今後の計画)
+「GREAT/GOOD/TRY AGAIN」の集計投票システムにより、特定の場面で服装が適切かどうかを判断できる（将来計画（MVPではない））
+このアプリで衣類の管理機能も実装したい（将来計画（MVPではない））
 
 This is a service for people who are not confident about their outfit choices
 A social platform for people to post an outfit plan and have others check it
-Through a voting system an outfit can be said to be acceptable or not for specific occasions
-I want to also implement this app to allow people to catalogue their clothing (future plan)
+Through a tally voting system of GREAT/GOOD/TRY AGAIN an outfit can be said to be acceptable or not for specific occasions(future plan(not MVP))
+I want to also implement this app to allow people to catalogue their clothing (future plan(not MVP))
 
 ## このサービスへの思い・作りたい理由
 フォーマルな場でもカジュアルな場でも、服装選びに何時間も費やした経験があります。選んだ後も、本当にこれで大丈夫かと一日中不安でした。
@@ -38,9 +38,11 @@ I plan to utilize social media to get users. Especially social media that where 
 ## サービスの差別化ポイント・推しポイント
 FITSやGETWARDROBEのようなコーディネートプランナーアプリをいくつか見てきました。FITSアプリのようにクローゼットにアイテムを追加する機能を取り入れたいと考えています。将来的にはGETWARDROBEのようなコーディネート機能を追加しつつ、その範囲を家族を超えて拡大したいと考えています。
 ユーザーはインスタグラム、フェイスブック、レディットなどのSNSアプリに写真を投稿して交流できます。インスタグラムのようなシンプルなSNS投稿機能を取り入れつつ、レディットのような匿名性を少し高めたいと考えています。
+これは、ユーザーが公の場ではユーザー名とアバターのみを使用することで実現され、投稿者の特定に焦点が当てられにくくなります。Redditとは異なり、個人の投稿履歴が公に容易に閲覧できないため、過去の投稿や他ユーザーの投稿へのコメントに基づいて人物を簡単に判断することはできません。
 
 I have seen outfit planner apps like FITS and GETWARDROBE. I want to take the ability to add items to a closet like in the FITS app. In the Future I would like to add the outfit coordination features like in GETWARDROBE but expand them to beyond family members.
 People can post photos to social media apps like, INSTAGRAM, FACEBOOK, REDDIT for interaction. I would like to take the simple social posting aspect INSTAGRAM but allow a bit more anonymity like REDDIT.
+This is achieved by having people only publicly use a username and avatar, which puts less focus on who is posting. Because no individual's post history will be easily viewable to public, unlike reddit, you can't easily judge a person based on their previous posts or their comments on other user's posts.
 
 ## 機能候補
 MVP
@@ -59,7 +61,7 @@ Full
 - カレンダー機能付きコーディネートプランナー(outfit planner with calender function)
 - お気に入りコーディネート(favorite outfits)
 - 色・タイプ・サイズ等によるワードローブ検索（ユーザー設定値）(wardrobe search by color, type, size, etc. (user set values))
-- 投稿検索 (post search)
+- 投稿検索 (post search by title)
 
 ## 使用する技術スタック
 - Ruby on Rails 
@@ -67,3 +69,20 @@ Full
   - ruby 3.4.3
 - データベースPostgreSQL
 - デプロイ先Heroku
+- ActiveStorage(画像収納)
+
+Gems
+- Kaminari(pagination)
+- Active_storage_validations
+- tailwindcss_rails
+- Devise
+- ransack (MVPではない)
+
+Development
+- better_errors
+
+?unsure?
+- sidekiq (redis)
+- cancancan or pundit
+
+すべてのGemの使用はRails 8.1との互換性に限定されます
