@@ -36,11 +36,11 @@ The app will be split into two parts. Closet(Garb) and Post(Gab). You upload pho
 I plan to utilize social media to get users. Especially social media that where people don't usually post photos of themselves.
 
 ## サービスの差別化ポイント・推しポイント
-服装プランナーアプリは存在し、ユーザーはSNSに写真を投稿して交流できます。
-本アプリは両方の機能を備えつつ、服装と確認機能に重点を置きます。
+FITSやGETWARDROBEのようなコーディネートプランナーアプリをいくつか見てきました。FITSアプリのようにクローゼットにアイテムを追加する機能を取り入れたいと考えています。将来的にはGETWARDROBEのようなコーディネート機能を追加しつつ、その範囲を家族を超えて拡大したいと考えています。
+ユーザーはインスタグラム、フェイスブック、レディットなどのSNSアプリに写真を投稿して交流できます。インスタグラムのようなシンプルなSNS投稿機能を取り入れつつ、レディットのような匿名性を少し高めたいと考えています。
 
-I have seen outfit planner apps, and people can post photos to social media for interaction.
-This app aims to do both, but with more focus on clothing and confirmation
+I have seen outfit planner apps like FITS and GETWARDROBE. I want to take the ability to add items to a closet like in the FITS app. In the Future I would like to add the outfit coordination features like in GETWARDROBE but expand them to beyond family members.
+People can post photos to social media apps like, INSTAGRAM, FACEBOOK, REDDIT for interaction. I would like to take the simple social posting aspect INSTAGRAM but allow a bit more anonymity like REDDIT.
 
 ## 機能候補
 MVP
@@ -62,5 +62,8 @@ Full
 - 投稿検索 (post search)
 
 ## 使用する技術スタック
+- Ruby on Rails 
+  - rails-8.1.2
+  - ruby 3.4.3
 - データベースPostgreSQL
 - デプロイ先Heroku
