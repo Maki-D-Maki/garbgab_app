@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+
+@source "/Users/maki/workspace/garbgab_app/node_modules/flowbite";

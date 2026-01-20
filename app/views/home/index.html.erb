@@ -1,4 +1,8 @@
-<h2>Hello World!</h2>
-<p>
-  The current time is now: <%= Time.now %>
-</p>
+<div class="flex items-center justify-center h-screen w-full">
+  <div class="flex gap-4">
+    <nav class="flex gap-2">
+      <%= button_to "Garb", items_path, method: :get, class: "sm:px-10 sm:py-10 md:px-30 md:py-30 lg:px-50 lg:py-50 xl:px-80 xl:py-80 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700" %>
+      <%= button_to "Gab", "#posts", method: :get, class:"sm:px-10 sm:py-10 md:px-30 md:py-30 lg:px-50 lg:py-50 xl:px-80 xl:py-80 text-lg font-semibold text-white bg-gray-600 rounded-lg hover:bg-gray-700" %>
+    </nav>
+  </div>
+</div>
