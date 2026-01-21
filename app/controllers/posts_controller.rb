@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit ]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /items/new
   def new
@@ -18,6 +19,8 @@ class PostsController < ApplicationController
   # Optional: For showing a single post
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
   end
 
 

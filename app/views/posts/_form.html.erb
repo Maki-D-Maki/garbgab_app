@@ -2,16 +2,18 @@
 
   <%= f.input :event %>
 
-<h4>Select Images:</h4>
+<h4>Select Items:</h4>
+<div class="image-grid">
   <% current_user.items.each do |item| %>
     <% if item.item_cover.attached? %>
-      <%= f.check_box :item_ids, { multiple: true, include_hidden: false }, item.id, nil %>
-      <%= label_tag "item_ids_#{item.id}", item.item_cover.filename %>
-      <%= image_tag item.item_cover.variant(resize_to_limit: [100, 100]) %>
+      <a>
+        <%= f.check_box :item_ids, { multiple: true, include_hidden: false }, item.id, nil%>
+        <%= image_tag item.item_cover.variant(:wardrobe)%>
+      </a>
     <% end %>
     <br>
   <% end %>
-
+</div>
   <%= f.input :description %>
 
   <div class="form-actions">

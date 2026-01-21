@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
 
   belongs_to :user, optional: true
-  has_many :post_items
+  has_many :post_items, dependent: :destroy
   has_many :posts, through: :post_items
   has_one_attached :item_cover do |attachable|
     attachable.variant :small, resize_to_fill: [60, 60]
