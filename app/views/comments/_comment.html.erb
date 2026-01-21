@@ -1,18 +1,23 @@
 <div class="comment">
   <div class="flex items-center space-x-2 p-2 bg-gray-100 rounded-md">
-    <% if comment.user.avatar.attached? %>
-      <%= image_tag comment.user.avatar.variant(:thumb), class: "user-icon" %>
-    <% else %>
-      <%= image_tag "IconU.png", class: "user-icon", size: "48x48" %>
-    <% end %>
-    <span class="username"><%= comment.user.name %></span>
+    <div class= "shadow-2xl bg-gray-300 rounded-md">
+      <% if comment.user.avatar.attached? %>
+        <%= image_tag comment.user.avatar.variant(:thumb), class: "ml-2 rounded-circle" %>
+      <% else %>
+        <%= image_tag "IconU.png", class: "user-icon", size: "48x48" %>
+      <% end %>
+      <span class="text-indigo-600 mr-2"><%= comment.user.name %></span>
+    </div>
+    <div class="h-8 w-px bg-gray-400"></div>
     <div class="comment-body">
       <p class="text-3xl"><%= comment.body %></p>
     </div>
+  </div>
+    <div class= "flex items-center space-x-2">
+      <span class ="inline whitespace-nowrap"><%= "#{time_ago_in_words(comment.created_at)} ago" %></span>
+      <div class="h-4 w-px bg-black"></div>
+      <% if comment.user == current_user %>
+        <span class= "inline whitespace-no wrap text-red-600 hover:text-red-950"><%= button_to "delete", comment, method: :delete %></span>
+      <% end %>
     </div>
-    <span class="timestamp"><%= time_ago_in_words(comment.created_at) %> ago</span>
-  <% if comment.user == current_user %>
-    <p class= "text-red-600 hover:text-red-950">
-      <%= button_to "delete", comment, method: :delete %>
-    </p>
-  <% end %>
+  </div>

@@ -1,7 +1,9 @@
 <!-- app/views/posts/show.html.erb -->
 
 <p id="notice"><%= notice %></p>
-
+<% if @post.user == current_user %>
+  <div class= "ml-0 text-red-600 hover:text-red-950"><%= button_to "delete", @post, method: :delete %></div>
+<% end %>
 <h1 class= "text-7xl" ><%= @post.event %></h1><br>
 <% if @post.item_ids.present? %>
   <div style="display: flex; flex-direction: row; gap: 10px;">
@@ -15,19 +17,17 @@
 <% end %>
 <p class= "text-4xl"><%= @post.description %></p>
 <hr  class="w-48 h-1 mx-auto my-4 bg-neutral-quaternary border-0 rounded-sm md:my-10">
-<div id="comments">
+<div id="comments", class="mb-20">
   <h2>Comments</h2>
   <%= render 'comments/form', comment: @comment, board: @board %>
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <table class="table">
           <tbody id="table-comment">
-              <% @post.comments.each do |comment| %>
-                <%= render @comments %>
-              <% end %>
+            <%= render @comments %>
           </tbody>
         </table>
       </div>
     </div>
 </div>
-<%= link_to "Back to posts", posts_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+<%= link_to "Back to posts", posts_path, class: "fixed inset-x-30 bottom-6 p-4 w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
