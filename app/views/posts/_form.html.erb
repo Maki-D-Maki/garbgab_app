@@ -1,0 +1,20 @@
+<%= simple_form_for @post do |f| %>
+
+  <%= f.input :event %>
+
+<h4>Select Images:</h4>
+  <% current_user.items.each do |item| %>
+    <% if item.item_cover.attached? %>
+      <%= f.check_box :item_ids, { multiple: true, include_hidden: false }, item.id, nil %>
+      <%= label_tag "item_ids_#{item.id}", item.item_cover.filename %>
+      <%= image_tag item.item_cover.variant(resize_to_limit: [100, 100]) %>
+    <% end %>
+    <br>
+  <% end %>
+
+  <%= f.input :description %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Post", class: "rounded-lg" %>
+  </div>
+<% end %>

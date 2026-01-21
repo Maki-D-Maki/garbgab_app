@@ -1,0 +1,17 @@
+<!-- app/views/posts/show.html.erb -->
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= @post.event %></h1>
+<% if @post.item_ids.present? %>
+  <div style="display: flex; flex-direction: row; gap: 10px;">
+    <% @post.item_ids.first(3).each do |item_ids| %>
+      <%= image_tag Item.find(item_ids).item_cover.variant(:full) %>
+  <% end %>
+  </div>
+<% else %>
+  <p>No images attached.</p>
+<% end %>
+<p><%= @post.description %></p>
+
+<%= link_to 'Back', posts_path %>

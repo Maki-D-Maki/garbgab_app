@@ -74,8 +74,13 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# Authentication
+# Authentication/validation
 gem "devise", "~> 4.9"
+
+#image
+gem 'active_storage_validations'
+gem 'image_processing'
+gem "ruby-vips"
 
 # UI/UX
 gem 'rails-i18n', '~> 8.0.0'

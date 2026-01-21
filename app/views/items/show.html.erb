@@ -4,7 +4,9 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
   <% end %>
-
+  <% if @item.item_cover.attached? %>
+    <%= image_tag @item.item_cover.variant(:full) %>
+  <% end %>
   <%= render @item %>
 
   <%= link_to "Edit this item", edit_item_path(@item), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>

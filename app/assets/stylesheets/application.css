@@ -4,6 +4,13 @@
 
 @source "/Users/maki/workspace/garbgab_app/node_modules/flowbite";
 
+
+.rounded-circle {
+  border-radius: 50%;
+  /* Optional: Ensure it behaves well */
+  display: inline-block; 
+  object-fit: cover; /* If using resize_to_fill */
+}
 /*
  * This is a manifest file that'll be compiled into application.css.
  *
