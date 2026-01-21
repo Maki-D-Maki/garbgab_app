@@ -49,6 +49,18 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Email
+  gem 'letter_opener_web'
+
+  # Debugger
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'byebug'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -61,3 +73,24 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Authentication/validation
+gem "devise", "~> 4.9"
+
+#image
+gem 'active_storage_validations'
+gem 'image_processing'
+gem "ruby-vips"
+
+# UI/UX
+gem 'rails-i18n', '~> 8.0.0'
+
+# Model
+gem 'enum_help'
+
+# Decorator
+gem 'active_decorator'
+
+gem "tailwindcss-rails", "~> 4.4"
+
+gem 'simple_form-tailwind'

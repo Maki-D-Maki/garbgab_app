@@ -1,0 +1,24 @@
+<h1 class= text-4xl>All Posts</h1>
+<div id="posts">
+  <div class="flex justify-between items-center">
+    <%= link_to "New post", new_post_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+  </div>
+  <% @posts.each do |post| %>
+    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
+      <%= link_to post_path(post), class: "block" do%>
+        <% if post.item_ids.present? %>
+          <div style="display: flex; flex-direction: row; gap: 10px;">
+            <% post.item_ids.first(3).each do |item_ids| %>
+              <%= image_tag Item.find(item_ids).item_cover.variant(:small) %>
+            <% end %>
+          </div>
+        <% else %>
+          <p>No images attached.</p>
+        <% end %>
+        <p  class="text-gray-600 mb-4 line-clamp-3"><%= post.description.truncate(100) %></p>
+        <small>Posted on: <%= post.created_at.strftime("%B %d, %Y") %></small>
+      <% end %>
+    </article>
+    <br>
+  <% end %>
+</div>

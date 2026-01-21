@@ -1,0 +1,6 @@
+<div class="row mb-3" id="comment-form">
+<%= simple_form_for [@post, @post.comments.build] do |f| %>
+  <%= f.input :body %>
+  <%= f.button :submit, "Comment", class: "rounded-lg" %>
+<% end %>
+</div>

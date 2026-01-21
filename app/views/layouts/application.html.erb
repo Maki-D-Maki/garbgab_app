@@ -23,6 +23,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+    <%= render 'shared/pre_login_header' %>
+    <% end %>
+    <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>
 </html>

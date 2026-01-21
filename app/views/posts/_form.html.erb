@@ -1,0 +1,22 @@
+<%= simple_form_for @post do |f| %>
+
+  <%= f.input :event %>
+
+<h4>Select Items:</h4>
+<div class="image-grid">
+  <% current_user.items.each do |item| %>
+    <% if item.item_cover.attached? %>
+      <a>
+        <%= f.check_box :item_ids, { multiple: true, include_hidden: false }, item.id, nil%>
+        <%= image_tag item.item_cover.variant(:wardrobe)%>
+      </a>
+    <% end %>
+    <br>
+  <% end %>
+</div>
+  <%= f.input :description %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Post", class: "rounded-lg" %>
+  </div>
+<% end %>

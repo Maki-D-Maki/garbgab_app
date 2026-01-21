@@ -1,0 +1,18 @@
+<div class="comment">
+  <div class="flex items-center space-x-2 p-2 bg-gray-100 rounded-md">
+    <% if comment.user.avatar.attached? %>
+      <%= image_tag comment.user.avatar.variant(:thumb), class: "user-icon" %>
+    <% else %>
+      <%= image_tag "IconU.png", class: "user-icon", size: "48x48" %>
+    <% end %>
+    <span class="username"><%= comment.user.name %></span>
+    <div class="comment-body">
+      <p class="text-3xl"><%= comment.body %></p>
+    </div>
+    </div>
+    <span class="timestamp"><%= time_ago_in_words(comment.created_at) %> ago</span>
+  <% if comment.user == current_user %>
+    <p class= "text-red-600 hover:text-red-950">
+      <%= button_to "delete", comment, method: :delete %>
+    </p>
+  <% end %>
