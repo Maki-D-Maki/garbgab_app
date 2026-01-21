@@ -94,3 +94,5 @@ gem 'active_decorator'
 gem "tailwindcss-rails", "~> 4.4"
 
 gem 'simple_form-tailwind'
+
+gem 'aws-sdk-s3'
