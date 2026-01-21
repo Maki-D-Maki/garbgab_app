@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit ]
+  before_action :set_post, only: %i[ show edit destroy]
   before_action :authenticate_user!, except: [:index]
 
   # GET /items/new
@@ -23,6 +23,10 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user).order(created_at: :desc)
   end
 
+  def destroy
+    @post.destroy
+    redirect_to posts_path, notice: "Post was successfully deleted."
+  end
 
   def create
     @post = current_user.posts.new(post_params)
