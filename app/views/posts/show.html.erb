@@ -1,14 +1,14 @@
-<!-- app/views/posts/show.html.erb -->
-
+<div class="w-full">
+<div class="w-auto sm:w-1/2 mx-auto">
 <p id="notice"><%= notice %></p>
 <% if @post.user == current_user %>
   <div class= "ml-0 text-red-600 hover:text-red-950"><%= button_to "delete", @post, method: :delete %></div>
 <% end %>
 <h1 class= "text-7xl" ><%= @post.event %></h1><br>
 <% if @post.item_ids.present? %>
-  <div style="display: flex; flex-direction: row; gap: 10px;">
+  <div style="display: flex;  flex-direction: row; gap: 10px;">
     <% @post.item_ids.first(3).each do |item_ids| %>
-      <%= image_tag Item.find(item_ids).item_cover.variant(:full) %>
+      <%= image_tag Item.find(item_ids).item_cover.variant(:full).processed %>
     <% end %>
   </div>
   <br>
@@ -31,3 +31,5 @@
     </div>
 </div>
 <%= link_to "Back to posts", posts_path, class: "fixed inset-x-30 bottom-6 p-4 w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+</div>
+</div>

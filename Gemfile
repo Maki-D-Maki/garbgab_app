@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
+
+ruby "3.4.3"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
@@ -95,4 +97,4 @@ gem "tailwindcss-rails", "~> 4.4"
 
 gem 'simple_form-tailwind'
 
-gem 'aws-sdk-s3'
+gem "aws-sdk-s3", require: false

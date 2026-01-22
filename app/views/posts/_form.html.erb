@@ -8,7 +8,7 @@
     <% if item.item_cover.attached? %>
       <a>
         <%= f.check_box :item_ids, { multiple: true, include_hidden: false }, item.id, nil%>
-        <%= image_tag item.item_cover.variant(:wardrobe)%>
+        <%= image_tag item.item_cover.variant(:wardrobe).processed%>
       </a>
     <% end %>
     <br>
