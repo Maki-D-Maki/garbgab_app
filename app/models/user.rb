@@ -12,5 +12,6 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_fill: [48, 48]
     attachable.variant :medium, resize_to_fill: [200, 200]
   end
-
+  validates :avatar, content_type: { in: [:png, :jpeg], spoofing_protection: true }
+  validates :avatar, size: { less_than: 2.megabytes }
 end
