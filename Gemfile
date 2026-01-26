@@ -85,7 +85,7 @@ gem 'image_processing'
 gem "ruby-vips"
 
 # UI/UX
-gem 'rails-i18n', '~> 8.0.0'
+gem 'rails-i18n', '~> 8.1.0'
 
 # Model
 gem 'enum_help'
