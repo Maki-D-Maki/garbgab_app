@@ -77,7 +77,7 @@ group :test do
 end
 
 # Authentication/validation
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 #image
 gem 'active_storage_validations'
